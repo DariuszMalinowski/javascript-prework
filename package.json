@@ -1,0 +1,20 @@
+{
+  "name": "javascript-prework",
+  "version": "1.0.0",
+  "description": "rock paper scizors",
+  "homepage": "https://github.com/DariuszMalinowski/javascript-prework#readme",
+  "bugs": {
+    "url": "https://github.com/DariuszMalinowski/javascript-prework/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DariuszMalinowski/javascript-prework.git"
+  },
+  "license": "MIT",
+  "author": "Dariusz Malinowski <dariusz.m.malinowski@gmail.com>",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
