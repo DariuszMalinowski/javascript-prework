@@ -16,10 +16,14 @@
   "main": "index.js",
   "scripts": {
     "test": "html-validate *.html",
-    "build:sass": "sass --style=compressed --no-source-map sass:css"
+    "build:sass": "sass --style=compressed --no-source-map sass:css",
+    "build:autoprefixer": "postcss css/*.css --use autoprefixer -d css"
   },
   "dependencies": {
+    "autoprefixer": "^10.4.21",
     "html-validate": "^10.1.2",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
     "sass": "^1.93.2"
   }
 }
