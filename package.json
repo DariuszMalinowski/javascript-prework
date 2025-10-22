@@ -15,9 +15,11 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "test": "html-validate *.html"
+    "test": "html-validate *.html",
+    "build:sass": "sass --style=compressed --no-source-map sass:css"
   },
   "dependencies": {
-    "html-validate": "^10.1.2"
+    "html-validate": "^10.1.2",
+    "sass": "^1.93.2"
   }
 }
