@@ -18,7 +18,9 @@
     "test": "html-validate *.html",
     "build": "npm run build:sass && npm run build:autoprefixer && npm run test",
     "build:sass": "sass --style=compressed --no-source-map sass:css",
-    "build:autoprefixer": "postcss css/*.css --use autoprefixer -d css"
+    "build:autoprefixer": "postcss css/*.css --use autoprefixer -d css",
+    "build-dev": "npm run build-dev:sass && npm run build:autoprefixer",
+    "build-dev:sass" : "sass --style=expanded --source-map sass:css"
   },
   "dependencies": {
     "autoprefixer": "^10.4.21",
