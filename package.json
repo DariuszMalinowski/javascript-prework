@@ -21,13 +21,14 @@
     "build:autoprefixer": "postcss css/*.css --use autoprefixer -d css",
     "build-dev": "npm run build-dev:sass && npm run build:autoprefixer",
     "build-dev:sass": "sass --style=expanded --source-map sass:css",
-    "watch:browsersync": "browser-sync start --server --files \"css/*.css\" \"*.html\""
-
+    "watch:browsersync": "browser-sync start --server --files \"css/*.css\" \"*.html\"",
+    "watch:sassprefixer": "onchange sass/*.scss -- npm run build-dev"
   },
   "dependencies": {
     "autoprefixer": "^10.4.21",
     "browser-sync": "^3.0.4",
     "html-validate": "^10.1.2",
+    "onchange": "^7.1.0",
     "postcss": "^8.5.6",
     "postcss-cli": "^11.0.1",
     "sass": "^1.93.2"
