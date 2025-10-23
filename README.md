@@ -1,2 +1,2 @@
 # javascript-prework
-rock, paper, scisors 
+rock, paper, scisorss
