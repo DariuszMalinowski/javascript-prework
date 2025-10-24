@@ -1,37 +1,33 @@
 
+// Liczenie ruchu komputera
+let randomNumber = Math.floor(Math.random() * 3) + 1;
 
-// ruch komputera
-let randomNumber = Math.floor(Math.random() * 3 + 1);
-console.log("wylosowana liczba to " + randomNumber);
-
-if (randomNumber == 1){
-    computerMove = 'KAMIEŃ';
-} else if (randomNumber == 2){
-    computerMove = 'PAPIER';
-} else if (randomNumber == 3){
-    computerMove = 'NORZYCE';
-} else {
-    computerMove = "NIEZNANY RUCH";
+// rozkodowanie ruchu obu graczy
+function getMoveName(randomNumber){
+    if (randomNumber == 1) {
+        return 'KAMIEŃ';
+    } else if (randomNumber == 2) {
+        return 'PAPIER';
+    } else if (randomNumber == 3) {
+        return 'NOŻYCE';
+    } else {
+    printMessage('Nie znam ruchu o id ' + randomNumber + '.');
+        return 'nieznany ruch';
+    }
 }
-printMessage('Jestem komputerem i zagrałem ' + computerMove);
 
-//Ruch gracza
-let playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.');
-console.log('Gracz wpisał: ' + playerInput);
+let computerMove = getMoveName(randomNumber);
+let playerMove = getMoveName(prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.'));
 
-if (playerInput == 1){
-    playerMove = 'KAMIEŃ';
-} else if (playerInput == 2){
-    playerMove = 'PAPIER';
-} else if (playerInput == 3){
-    playerMove = 'NORZYCE';
-} else {
-    playerMove = "NIEZNANY RUCH";
-}
-printMessage('Twój ruch to: ' + playerMove);
+console.log('Ruch komputera to: ' + computerMove);
+console.log('Ruch gracza to: ' + playerMove);
+
+let argcomputerMove = computerMove;
+let argplayerMove = playerMove;
 
 // Warunki opcji wygranej i przegranej
 let gameresult = Math.floor(Math.random() * 3 + 1);
+
 if (gameresult == 1){
     gameResultWin = 'BRAWO WYGRAŁEŚ!';
 } else if (gameresult == 2){
@@ -39,7 +35,7 @@ if (gameresult == 1){
 } else if (gameresult == 3){
     gameResultWin = 'WYGRANA!!!';
 } else {
-    gameResultWin = "WYGRANA"
+    gameResultWin = "WYGRANA";
 }
 
 if (gameresult == 1){
@@ -49,31 +45,38 @@ if (gameresult == 1){
 } else if (gameresult == 3){
     gameResultDefeat = 'TYM RAZEM PRZEGRAŁEŚ';
 } else {
-    gameResultDefeat = "PRZEGRANA"
+    gameResultDefeat = "PRZEGRANA";
 }
 
-// Warunki gry
-if(computerMove == 'KAMIEŃ' && playerMove == 'PAPIER'){
+console.log('wyniki', gameResultWin, gameResultDefeat);
+console.log('ruchy', argcomputerMove, argplayerMove);
+
+//Wyświetlanie wyników
+function displayResult (argcomputerMove, argplayerMove){
+    printMessage("Komputer wybrał " + argcomputerMove + " a ty " + argplayerMove);
+if(argcomputerMove == 'KAMIEŃ' && argplayerMove == 'PAPIER'){
     printMessage(gameResultWin);
-} else if (computerMove == 'PAPIER' && playerMove == 'NORZYCE'){
+} else if (argcomputerMove == 'PAPIER' && argplayerMove == 'NOŻYCE'){
     printMessage(gameResultWin);
-} else if (computerMove == 'NORZYCE' && playerMove == 'KAMIEŃ'){
+} else if (argcomputerMove == 'NOŻYCE' && argplayerMove == 'KAMIEŃ'){
     printMessage(gameResultWin);
-} else if (computerMove == 'PAPIER' && playerMove == 'KAMIEŃ'){
+} else if (argcomputerMove == 'PAPIER' && argplayerMove == 'KAMIEŃ'){
     printMessage(gameResultDefeat);
-} else if (computerMove == 'NORZYCE' && playerMove == 'PAPIER'){
+} else if (argcomputerMove == 'NOŻYCE' && argplayerMove == 'PAPIER'){
     printMessage(gameResultDefeat);
-} else if (computerMove == 'KAMIEŃ' && playerMove == 'NORZYCE'){
+} else if (argcomputerMove == 'KAMIEŃ' && argplayerMove == 'NOŻYCE'){
     printMessage(gameResultDefeat);
-} else if (computerMove == 'PAPIER' && playerMove == 'PAPIER'){
+} else if (argcomputerMove == 'PAPIER' && argplayerMove == 'PAPIER'){
     printMessage('REMIS!');
-} else if (computerMove == 'NORZYCE' && playerMove == 'NORZYCE'){
+} else if (argcomputerMove == 'NOŻYCE' && argplayerMove == 'NOŻYCE'){
     printMessage('REMIS!');
-} else if (computerMove == 'KAMIEŃ' && playerMove == 'KAMIEŃ'){
+} else if (argcomputerMove == 'KAMIEŃ' && argplayerMove == 'KAMIEŃ'){
     printMessage('REMIS!');
 } else {
     printMessage('BRAK ZWYCIĘZCY');
 }
+}
 
+displayResult(argcomputerMove, argplayerMove);
 
 
