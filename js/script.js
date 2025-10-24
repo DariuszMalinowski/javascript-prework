@@ -1,6 +1,6 @@
 
 
-
+// ruch komputera
 let randomNumber = Math.floor(Math.random() * 3 + 1);
 console.log("wylosowana liczba to " + randomNumber);
 
@@ -15,8 +15,7 @@ if (randomNumber == 1){
 }
 printMessage('Jestem komputerem i zagrałem ' + computerMove);
 
-
-
+//Ruch gracza
 let playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.');
 console.log('Gracz wpisał: ' + playerInput);
 
@@ -31,18 +30,41 @@ if (playerInput == 1){
 }
 printMessage('Twój ruch to: ' + playerMove);
 
+// Warunki opcji wygranej i przegranej
+let gameresult = Math.floor(Math.random() * 3 + 1);
+if (gameresult == 1){
+    gameResultWin = 'BRAWO WYGRAŁEŚ!';
+} else if (gameresult == 2){
+    gameResultWin = 'SUPER CI IDZIE!';
+} else if (gameresult == 3){
+    gameResultWin = 'WYGRANA!!!';
+} else {
+    gameResultWin = "WYGRANA"
+}
+
+if (gameresult == 1){
+    gameResultDefeat = 'NIESTETY NIE TYM RAZEM!';
+} else if (gameresult == 2){
+    gameResultDefeat = 'NIE PODDAWAJ SIĘ!';
+} else if (gameresult == 3){
+    gameResultDefeat = 'TYM RAZEM PRZEGRAŁEŚ';
+} else {
+    gameResultDefeat = "PRZEGRANA"
+}
+
+// Warunki gry
 if(computerMove == 'KAMIEŃ' && playerMove == 'PAPIER'){
-    printMessage('WYGRAŁEŚ!');
+    printMessage(gameResultWin);
 } else if (computerMove == 'PAPIER' && playerMove == 'NORZYCE'){
-    printMessage('WYGRAŁEŚ!');
+    printMessage(gameResultWin);
 } else if (computerMove == 'NORZYCE' && playerMove == 'KAMIEŃ'){
-    printMessage('WYGRAŁEŚ!');
+    printMessage(gameResultWin);
 } else if (computerMove == 'PAPIER' && playerMove == 'KAMIEŃ'){
-    printMessage('PRZEGRAŁEŚ!');
+    printMessage(gameResultDefeat);
 } else if (computerMove == 'NORZYCE' && playerMove == 'PAPIER'){
-    printMessage('PRZEGRAŁEŚ!');
+    printMessage(gameResultDefeat);
 } else if (computerMove == 'KAMIEŃ' && playerMove == 'NORZYCE'){
-    printMessage('PRZEGRAŁEŚ!');
+    printMessage(gameResultDefeat);
 } else if (computerMove == 'PAPIER' && playerMove == 'PAPIER'){
     printMessage('REMIS!');
 } else if (computerMove == 'NORZYCE' && playerMove == 'NORZYCE'){
