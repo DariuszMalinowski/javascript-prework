@@ -31,4 +31,27 @@ if (playerInput == 1){
 }
 printMessage('Twój ruch to: ' + playerMove);
 
+if(computerMove == 'KAMIEŃ' && playerMove == 'PAPIER'){
+    printMessage('WYGRAŁEŚ!');
+} else if (computerMove == 'PAPIER' && playerMove == 'NORZYCE'){
+    printMessage('WYGRAŁEŚ!');
+} else if (computerMove == 'NORZYCE' && playerMove == 'KAMIEŃ'){
+    printMessage('WYGRAŁEŚ!');
+} else if (computerMove == 'PAPIER' && playerMove == 'KAMIEŃ'){
+    printMessage('PRZEGRAŁEŚ!');
+} else if (computerMove == 'NORZYCE' && playerMove == 'PAPIER'){
+    printMessage('PRZEGRAŁEŚ!');
+} else if (computerMove == 'KAMIEŃ' && playerMove == 'NORZYCE'){
+    printMessage('PRZEGRAŁEŚ!');
+} else if (computerMove == 'PAPIER' && playerMove == 'PAPIER'){
+    printMessage('REMIS!');
+} else if (computerMove == 'NORZYCE' && playerMove == 'NORZYCE'){
+    printMessage('REMIS!');
+} else if (computerMove == 'KAMIEŃ' && playerMove == 'KAMIEŃ'){
+    printMessage('REMIS!');
+} else {
+    printMessage('BRAK ZWYCIĘZCY');
+}
+
+
 
