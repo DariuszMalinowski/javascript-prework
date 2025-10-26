@@ -1,3 +1,9 @@
+// Wyniki
+let wins = 0;
+let losses = 0;
+let draws = 0;
+
+// Gra
 function playGame(playerInput) {
 
     clearMessages()
@@ -60,30 +66,48 @@ function playGame(playerInput) {
         printMessage("Komputer wybrał " + argcomputerMove + " a ty " + argplayerMove);
     if(argcomputerMove == 'KAMIEŃ' && argplayerMove == 'PAPIER'){
         printMessage(gameResultWin);
+        wins++;
     } else if (argcomputerMove == 'PAPIER' && argplayerMove == 'NOŻYCE'){
         printMessage(gameResultWin);
+        wins++;
     } else if (argcomputerMove == 'NOŻYCE' && argplayerMove == 'KAMIEŃ'){
         printMessage(gameResultWin);
+        wins++;
     } else if (argcomputerMove == 'PAPIER' && argplayerMove == 'KAMIEŃ'){
         printMessage(gameResultDefeat);
+        losses++;
     } else if (argcomputerMove == 'NOŻYCE' && argplayerMove == 'PAPIER'){
         printMessage(gameResultDefeat);
+        losses++;
     } else if (argcomputerMove == 'KAMIEŃ' && argplayerMove == 'NOŻYCE'){
         printMessage(gameResultDefeat);
+        losses++;
     } else if (argcomputerMove == 'PAPIER' && argplayerMove == 'PAPIER'){
         printMessage('REMIS!');
+        draws++;
     } else if (argcomputerMove == 'NOŻYCE' && argplayerMove == 'NOŻYCE'){
         printMessage('REMIS!');
+        draws++;
     } else if (argcomputerMove == 'KAMIEŃ' && argplayerMove == 'KAMIEŃ'){
         printMessage('REMIS!');
+        draws++;
     } else {
         printMessage('BRAK ZWYCIĘZCY');
     }
     }
 
     displayResult(argcomputerMove, argplayerMove);
+    updateScoreboard();
+
+    // Wyniki gry
+    function updateScoreboard() {
+        document.getElementById('wins').textContent = wins;
+        document.getElementById('losses').textContent = losses;
+        document.getElementById('draws').textContent = draws;
+    }
 }
 
+// Przyciski
 document.getElementById('play-rock').addEventListener('click', function() {
   playGame(1);
 });

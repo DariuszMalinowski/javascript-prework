@@ -41,15 +41,16 @@ body {
   }
 
     .btn:hover {
-      background-color: rgb(34, 224, 69);
+      background: linear-gradient(#eed9c0, #f28006);
+      color: blue;
       transform: translateY(-2px);
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
     }
 
-    //.btn:active {
-      //transform: translateY(0);
-      //box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-    //}
+    .btn:active {
+      transform: translateY(0);
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    }
 
   .messages {
     font-size: 24px;
@@ -57,3 +58,25 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
   
+  .result {
+    margin-top: 80px;
+  }
+
+  #scoreboard {
+    margin:auto;
+    margin-top: 20px;
+    border-collapse: collapse;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+    #scoreboard th, #scoreboard td {
+      border: 1px solid black;
+      padding: 8px;
+    }
+
+
+    #scoreboard td {
+      font-weight: 600;
+    }
