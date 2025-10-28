@@ -1,18 +1,18 @@
 // Wyniki
-let wins = 0;
-let losses = 0;
-let draws = 0;
+let wins = 0,
+    losses = 0,
+    draws = 0;
 
 // Gra
-function playGame(playerInput) {
+let playGame = function(playerInput) {
 
     clearMessages()
 
     // Liczenie ruchu komputera
-    let randomNumber = Math.floor(Math.random() * 3) + 1;
+    const randomNumber = Math.floor(Math.random() * 3) + 1;
 
     // rozkodowanie ruchu obu graczy
-    function getMoveName(randomNumber){
+    const getMoveName = function(randomNumber){
         if (randomNumber == 1) {
             return 'KAMIEŃ';
         } else if (randomNumber == 2) {
@@ -26,17 +26,17 @@ function playGame(playerInput) {
     }
 
     //Ruchy graczy
-    let computerMove = getMoveName(randomNumber);
-    let playerMove = getMoveName(playerInput)
+    const computerMove = getMoveName(randomNumber);
+    const playerMove = getMoveName(playerInput)
 
     console.log('Ruch komputera to: ' + computerMove);
     console.log('Ruch gracza to: ' + playerMove);
 
-    let argcomputerMove = computerMove;
-    let argplayerMove = playerMove;
+    const argcomputerMove = computerMove;
+    const argplayerMove = playerMove;
 
     // Warunki opcji wygranej i przegranej
-    let gameresult = Math.floor(Math.random() * 3 + 1);
+    const gameresult = Math.floor(Math.random() * 3 + 1);
 
     if (gameresult == 1){
         gameResultWin = 'BRAWO WYGRAŁEŚ!';
@@ -62,7 +62,7 @@ function playGame(playerInput) {
     console.log('ruchy', argcomputerMove, argplayerMove);
 
     //Wyświetlanie wyników
-    function displayResult (argcomputerMove, argplayerMove){
+    const displayResult = function(argcomputerMove, argplayerMove){
         printMessage("Komputer wybrał " + argcomputerMove + " a ty " + argplayerMove);
     if(argcomputerMove == 'KAMIEŃ' && argplayerMove == 'PAPIER'){
         printMessage(gameResultWin);
@@ -96,10 +96,11 @@ function playGame(playerInput) {
     }
     }
 
+    //TUTAJ JEST WYWOŁANIE FUNKCJI ALE NIE WIEM JAK ZMIENIĆ Żeby działało
     displayResult(argcomputerMove, argplayerMove);
     updateScoreboard();
 
-    // Wyniki gry
+    // Wyniki gry tu nie działa
     function updateScoreboard() {
         document.getElementById('wins').textContent = wins;
         document.getElementById('losses').textContent = losses;
